@@ -1,0 +1,18 @@
+<h1><%= "Bem vindo #{current_user.email}" %></h1>
+<p>Find me in app/views/page/home.html.erb</p>
+
+<% if user_signed_in? %>
+  <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign in", new_user_session_path %>
+  <%= link_to "Sign up", new_user_registration_path %>
+<% end %>
+<p>  </p>
+
+<div class="container">
+  <ul>
+    <li><%= link_to "Web Books", books_path %></li>
+    <li><%= link_to "API V1 Books"  %></li>
+    <li><%= link_to "API V1 Android Books" %></li>
+  </ul>
+</div>
